@@ -23,12 +23,12 @@ public abstract class XMLParser {
         }
 
         try {
-            Document doc = builder.parse(xmlPath);
+            Document doc = builder.parse(file);
         }   catch(SAXException e) {
             e.printStackTrace();
         }   catch(IOException e) {
             e.printStackTrace();
         }
-        
+
      }
 }
