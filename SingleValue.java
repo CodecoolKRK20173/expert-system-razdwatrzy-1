@@ -1,11 +1,13 @@
-public class SingleValue {
+import java.util.List;
+
+public class SingleValue extends Value {
 
     private String param;
-    private boolean selectionType;
 
     public SingleValue(String param, boolean selectionType) {
         this.param = param;
-        this.selectionType = selectionType;
+        params.add(param);
+        super.params = params;
     }
     
 }
