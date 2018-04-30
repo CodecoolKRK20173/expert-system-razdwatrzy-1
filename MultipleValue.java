@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class MultipleValue {
+public class MultipleValue extends Value {
 
     private List<String> params;
     private boolean selectionType;
