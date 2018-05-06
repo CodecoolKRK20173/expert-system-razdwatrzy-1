@@ -3,8 +3,6 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 
-import value.*;
-
 public class Answer {
 
     private List<Value> values = new ArrayList<>();

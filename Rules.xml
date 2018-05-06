@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules>
     <Rule id="money">
-        <Question>Do you have 20.000.000 PLN for a car?</Question>
+        <Question>Do you have 20.000.000 PLN for a car? y/n</Question>
         <Answer>
             <Selection value="true">
                 <SingleValue value="yes"/>
@@ -12,13 +12,13 @@
         </Answer>
     </Rule>
     <Rule id="comfort">
-        <Question>What is more important for you?</Question>
+        <Question>Do you like comfort? y/n</Question>
         <Answer>
             <Selection value="true">
-                <SingleValue value="comfort"/>
+                <SingleValue value="yes"/>
             </Selection>
             <Selection value="false">
-                <SingleValue value="speed"/>
+                <SingleValue value="no"/>
             </Selection>
         </Answer>
     </Rule>

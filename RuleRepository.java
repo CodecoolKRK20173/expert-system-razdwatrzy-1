@@ -1,14 +1,12 @@
-import java.util.HashMap;
-import java.util.Map;
-
-import parser.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RuleRepository {
 
-    private Map<String, String> rules;
+    private List<Question> rules;
 
     public RuleRepository(){
-        this.rules = new HashMap<>();
+        this.rules = new ArrayList<>();
     }
 
     public void addQuestion(Question question){
