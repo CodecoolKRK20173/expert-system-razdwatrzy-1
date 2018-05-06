@@ -1,3 +1,5 @@
+package parser;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -9,8 +11,14 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 public abstract class XMLParser {
+
+    private Document doc;
+
+    public XMLParser(String xmlPath) {
+        doc = loadXmlDocument(xmlPath);
+    }
     
-    public void loadXmlDocument(String xmlPath) {
+    private Document loadXmlDocument(String xmlPath) {
         
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;
@@ -23,12 +31,20 @@ public abstract class XMLParser {
         }
 
         try {
-            Document doc = builder.parse(file);
+            doc = builder.parse(file);
         }   catch(SAXException e) {
             e.printStackTrace();
         }   catch(IOException e) {
             e.printStackTrace();
+            System.exit(0);
         }
 
+        return doc;
+
      }
+
+     public Document getDocument() {
+         return doc;
+     }
+
 }
