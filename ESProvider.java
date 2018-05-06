@@ -1,8 +1,6 @@
 import java.util.Iterator;
 import java.util.Scanner;
 
-import parser.*;
-
 public class ESProvider {
 
     private RuleParser ruleParser;

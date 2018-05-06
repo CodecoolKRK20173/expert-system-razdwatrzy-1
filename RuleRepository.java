@@ -1,8 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import parser.*;
-
 public class RuleRepository {
 
     private Map<String, String> rules;
