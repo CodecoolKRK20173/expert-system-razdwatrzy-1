@@ -1,13 +1,6 @@
 public class FactParser {
 
-    private FactRepository factRepo;
-
-    FactParser() {
-
+    FactParser(String filePath) {
+        super(filePath);
     }
-
-    public FactRepository getFactRepository() {
-        return this.factRepo;
-    }
-
 }
