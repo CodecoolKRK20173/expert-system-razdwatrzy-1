@@ -8,7 +8,7 @@ public class ESProvider {
     private RuleRepository ruleRepository;
 
     public ESProvider() {
-        this("parser/Rules.xml", "parser/Facts.xml");
+        this("Rules.xml", "Facts.xml");
     }
 
     private ESProvider(String rulesFilePath, String factsFilePath) {
@@ -19,8 +19,8 @@ public class ESProvider {
 
     public void collectAnswers() {
 
-        // Iterator<Question> questions = ruleRepository.getIterator();
-        // Answer answer = new Answer();
+        Iterator<Question> questions = ruleRepository.getIterator();
+        Answer answer = new Answer();
 
         while (questions.hasNext()) {
             
