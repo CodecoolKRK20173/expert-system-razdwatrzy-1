@@ -1,13 +1,12 @@
+package value;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class MultipleValue extends Value {
-
-    private List<String> params;
-    private boolean selectionType;
+public class MultipleValue extends Value{
 
     public MultipleValue(List<String> params, boolean selectionType) {
-        this.params = params;
-        this.selectionType = selectionType;
+        super(params, selectionType);        
     }
-    
+
 }
