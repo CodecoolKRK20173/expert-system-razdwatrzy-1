@@ -1,11 +1,13 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
 
 public class FactRepository {
 
     private List<Fact> facts;
     
     public FactRepository() {
-        this.factRepo = new ArrayList<>();
+        this.facts = new ArrayList<>();
     }
 
     public void addFact(Fact fact) {
