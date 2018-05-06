@@ -1,22 +1,22 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-import parser.*;
 
 public class RuleRepository {
 
-    private Map<String, String> rules;
+    private List<Question> rules;
 
     public RuleRepository(){
-        this.rules = new HashMap<>();
+        this.rules = new ArrayList<>();
     }
 
     public void addQuestion(Question question){
-        rules.put(question.getQuestion(), question.getId());
+        rules.add(question);
     }
 
     public Iterator<Question> getIterator() {
-        return new QuestionIterator();
+        return new QuestionIterator(rules);
     }
 
 }

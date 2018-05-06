@@ -1,5 +1,3 @@
-package value;
-
 import java.util.List;
 
 public class SingleValue extends Value { 
