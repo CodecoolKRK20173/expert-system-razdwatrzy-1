@@ -28,7 +28,7 @@ public class ESProvider {
             System.out.println(question.getQuestion());
 
             Scanner sc = new Scanner(System.in);
-            String answer = sc.next();
+            String ui = sc.next();
 
         }
 

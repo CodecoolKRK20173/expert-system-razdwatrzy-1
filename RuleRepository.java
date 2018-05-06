@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class RuleRepository {
 
@@ -10,11 +11,11 @@ public class RuleRepository {
     }
 
     public void addQuestion(Question question){
-        rules.put(question.getQuestion(), question.getId());
+        rules.add(question);
     }
 
     public Iterator<Question> getIterator() {
-        return new QuestionIterator();
+        return new QuestionIterator(rules);
     }
 
 }
