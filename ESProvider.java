@@ -1,6 +1,17 @@
 import parser.*;
 
 public class ESProvider {
+
+    private RuleParser ruleParser;
+
+    public ESProvider() {
+        this("parser/Rules.xml", "parser/Facts.xml");
+    }
+
+    private ESProvider(String rulesFilePath, String factsFilePath) {
+
+    }
+
     private FactRepository factRepo;
     private RuleRepository ruleRepo;
     // private FactParser factParser;

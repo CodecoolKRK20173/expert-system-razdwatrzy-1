@@ -4,6 +4,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 
 public class RuleParser extends XMLParser {
 
@@ -14,26 +15,29 @@ public class RuleParser extends XMLParser {
     public RuleRepository getRuleRepository() {
 
         Document doc = this.getDocument();
-        Element root = doc.getDocumentElement();
-        NodeList nodeList = root.getChildNodes();
+        Element rootRules = doc.getDocumentElement();
+        NodeList rulesNodes = rootRules.getChildNodes();
 
         RuleRepository ruleRepository = new RuleRepository();
 
-        for (int i = 0; i < nodeList.getLength(); i++) {
+        for (int i = 0; i < rulesNodes.getLength(); i++) {
 
-            Node child = nodeList.item(i);
-            if (child instanceof Element) {
+            Node ruleNode = rulesNodes.item(i);
+            if (ruleNode instanceof Element) {
                 
-                Element childElement = (Element) child;
-                NodeList childs = childElement.getChildNodes();
+                Element rule = (Element) ruleNode;
+                NodeList questions = rule.getChildNodes();
+                String id = rule.getAttribute("id");
 
-                for (int j = 0; j < childs.getLength(); j++) {
+                for (int j = 0; j < questions.getLength(); j++) {
 
-                    Node test = childs.item(j);
+                    Node question = questions.item(j);
 
-                    if (test instanceof Element) {
+                    if (question instanceof Element) {
 
-                        System.out.println(test.getNodeName());
+                        Text text = (Text) question.getFirstChild();
+                        String questionString = text.getData().trim();
+                        ruleRepository.addQuestion(question);
 
                     }
 
