@@ -1,30 +1,38 @@
+import java.util.Iterator;
+import java.util.Scanner;
+
 import parser.*;
 
 public class ESProvider {
 
     private RuleParser ruleParser;
+    private FactParser factParser;
+    private RuleRepository ruleRepository;
 
     public ESProvider() {
         this("parser/Rules.xml", "parser/Facts.xml");
     }
 
     private ESProvider(String rulesFilePath, String factsFilePath) {
-
+        this.ruleParser = new RuleParser(rulesFilePath);
+        this.factParser = new FactParser(factsFilePath);
+        this.ruleRepository = ruleParser.getRuleRepository();
     }
 
-    private FactRepository factRepo;
-    private RuleRepository ruleRepo;
-    // private FactParser factParser;
-    // private RuleParser ruleParser;
-
-    // ESProvider(FactParser factParser, RuleParser ruleParser) {
-    //     this.factRepo = getFactRepository();
-    //     this.ruleRepo = getRuleRepository();
-    //     this.factParser = factParser;
-    //     this.ruleParser = ruleParser;
-    // }
-
     public void collectAnswers() {
+
+        // Iterator<Question> questions = ruleRepository.getIterator();
+        // Answer answer = new Answer();
+
+        while (questions.hasNext()) {
+            
+            Question question = questions.next();
+            System.out.println(question.getQuestion());
+
+            Scanner sc = new Scanner(System.in);
+            String answer = sc.next();
+
+        }
 
     }
 
