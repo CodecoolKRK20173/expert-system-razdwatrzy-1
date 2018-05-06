@@ -1,19 +1,19 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FactRepository {
-    private Map<Integer, Fact> factRepo;
 
-    FactRepository() {
-        this.factRepo = new HashMap<>();
+    private List<Fact> facts;
+    
+    public FactRepository() {
+        this.factRepo = new ArrayList<>();
     }
 
     public void addFact(Fact fact) {
-
+        facts.add(fact);
     }
 
-    // public Iterator<Fact> getIterator() {
-
-    // }
+    public Iterator<Fact> getIterator() {
+        return new FactIterator(facts);
+    }
 
 }
