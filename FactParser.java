@@ -1,13 +1,10 @@
-public class FactParser {
+public class FactParser extends XMLParser {
 
     private FactRepository factRepo;
 
-    FactParser() {
-
+    FactParser(String filePath) {
+        super(filePath);
     }
 
-    public FactRepository getFactRepository() {
-        return this.factRepo;
-    }
-
+   
 }
