@@ -40,10 +40,9 @@ public class RuleParser extends XMLParser {
 
                         Text text = (Text) question.getFirstChild();
                         String questionString = text.getData().trim();
-                        ruleRepository.addQuestion(question);
 
-                        Question question = new Question(id, questionString, answer);
-                        ruleRepository.addQuestion(question);
+                        Question q = new Question(id, questionString, answer);
+                        ruleRepository.addQuestion(q);
                     }
 
                 }
