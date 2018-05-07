@@ -20,7 +20,6 @@ public class ESProvider {
     public void collectAnswers() {
 
         Iterator<Question> questions = ruleRepository.getIterator();
-        Answer answer = new Answer();
 
         while (questions.hasNext()) {
             
