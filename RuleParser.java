@@ -21,10 +21,8 @@ public class RuleParser extends XMLParser {
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             Element rule = (Element) nodeList.item(i);
-            if (rule instanceof Element) {
-                Question question = createQuestion(rule);
-                ruleRepository.addQuestion(question);
-            }
+            Question question = createQuestion(rule);
+            ruleRepository.addQuestion(question);
         }
         return ruleRepository;
     }
