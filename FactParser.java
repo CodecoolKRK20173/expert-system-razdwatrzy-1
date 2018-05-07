@@ -42,7 +42,8 @@ public class FactParser extends XMLParser {
    
     private String getDescription(Element elem) {
 
-        String description = elem.getAttribute("Description");
+        Element desc = (Element) elem.getElementsByTagName("Description").item(0);
+        String description = desc.getAttribute("value");
         
         return description;
     }
