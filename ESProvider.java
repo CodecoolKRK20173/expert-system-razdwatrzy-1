@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ESProvider {
@@ -37,6 +38,7 @@ public class ESProvider {
             System.out.println(question.getQuestion());
             userInput = sc.next();
             result = question.getEvaluatedAnswer(userInput);
+            System.out.println(result);
             userAnswers.put(question.getId(), result);
         }
 
