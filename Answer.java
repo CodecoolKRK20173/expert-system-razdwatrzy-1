@@ -11,9 +11,7 @@ public class Answer {
 
         for (Value value : values) {
             for (String option : value.getInputPattern()) {
-                if (option.equals(input)) {
-                    return true;
-                }
+                return option.equals(input);
             }
         }
         return false;
