@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -7,6 +8,11 @@ public class ESProvider {
     private FactParser factParser;
     private RuleRepository ruleRepository;
     private FactRepository factRepository;
+    private Map<String, Boolean> userAnswers;
+    private Scanner sc;
+    private String userInput;
+    private Answer answer;
+    private Boolean result;
 
     public ESProvider() {
         this("Rules.xml", "Facts.xml");
@@ -22,15 +28,16 @@ public class ESProvider {
     public void collectAnswers() {
 
         Iterator<Question> questions = ruleRepository.getIterator();
+        userAnswers = new HashMap<>();
+        sc = new Scanner(System.in);
 
         while (questions.hasNext()) {
             
             Question question = questions.next();
             System.out.println(question.getQuestion());
-
-            Scanner sc = new Scanner(System.in);
-            String ui = sc.next();
-
+            userInput = sc.next();
+            result = question.getEvaluatedAnswer(userInput);
+            userAnswers.put(question.getId(), result);
         }
 
     }
