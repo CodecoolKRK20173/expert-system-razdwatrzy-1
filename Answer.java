@@ -7,13 +7,16 @@ public class Answer {
 
     private List<Value> values = new ArrayList<>();
 
-    public boolean evaluateAnswerByInput(String input) {
+    public boolean evaluateAnswerByInput(String input) throws InputMismatchException {
 
-        for (Value value : values) {
-            for (String option : value.getInputPattern()) {
-                return option.equals(input);
+        if (input.equals("yes") || input.equals("no")) {
+            for (Value value : values) {
+                for (String option : value.getInputPattern()) {
+                    return option.equals(input);
+                }
             }
-        }
+        } else
+            throw new InputMismatchException();
         return false;
     }
 
