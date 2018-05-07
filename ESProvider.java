@@ -36,8 +36,7 @@ public class ESProvider {
             Question question = questions.next();
             System.out.println(question.getQuestion());
             userInput = sc.next();
-            answer = question.getAnswer();
-            result = answer.evaluateAnswerByInput(userInput);
+            result = question.getEvaluatedAnswer(userInput);
             userAnswers.put(question.getId(), result);
         }
 
