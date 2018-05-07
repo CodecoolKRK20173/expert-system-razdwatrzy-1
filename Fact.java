@@ -19,6 +19,10 @@ public class Fact {
         return this.id;
     }
 
+    public Map<String, Boolean> getidMap() {
+        return this.idMap;
+    }
+
     public void setFactValueByID (String id, boolean value) {
         idMap.put(id, value);
     }
