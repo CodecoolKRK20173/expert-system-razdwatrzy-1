@@ -6,6 +6,7 @@ public class ESProvider {
     private RuleParser ruleParser;
     private FactParser factParser;
     private RuleRepository ruleRepository;
+    private FactRepository factRepository;
 
     public ESProvider() {
         this("Rules.xml", "Facts.xml");
@@ -15,6 +16,7 @@ public class ESProvider {
         this.ruleParser = new RuleParser(rulesFilePath);
         this.factParser = new FactParser(factsFilePath);
         this.ruleRepository = ruleParser.getRuleRepository();
+        this.factRepository = factParser.getFactRepository();
     }
 
     public void collectAnswers() {
